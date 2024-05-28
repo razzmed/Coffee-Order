@@ -1,6 +1,7 @@
 package com.example.coffeeorder;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -36,9 +37,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void createSpinner() {
         binding.spinner.setOnItemSelectedListener(this);
         spinnerArrayList = new ArrayList<>();
-        spinnerArrayList.add("espresso");
-        spinnerArrayList.add("americano");
-        spinnerArrayList.add("cappuccino");
+        spinnerArrayList.add("Эспрессо");
+        spinnerArrayList.add("Американо");
+        spinnerArrayList.add("Капучино");
 
         spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, spinnerArrayList);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -47,9 +48,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void createMap() {
         goodsMap = new HashMap<>();
-        goodsMap.put("espresso", 1.0);
-        goodsMap.put("americano", 1.5);
-        goodsMap.put("cappuccino", 2.0);
+        goodsMap.put("Эспрессо", 1.0);
+        goodsMap.put("Американо", 1.5);
+        goodsMap.put("Капучино", 2.0);
     }
 
     public void decrease(View view) {
@@ -107,11 +108,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         order.orderPrice = quantity * price;
 
         Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class);
-        orderIntent.putExtra("userName", order.userName);
-        orderIntent.putExtra("goodsName", order.goodsName);
-        orderIntent.putExtra("quantity", order.quantity);
-        orderIntent.putExtra("price", order.price);
-        orderIntent.putExtra("orderPrice", order.orderPrice);
+        orderIntent.putExtra("Имя", order.userName);
+        orderIntent.putExtra("Название товара", order.goodsName);
+        orderIntent.putExtra("Количество", order.quantity);
+        orderIntent.putExtra("Цена", order.price);
+        orderIntent.putExtra("Стоимость заказа", order.orderPrice);
 
         startActivity(orderIntent);
     }

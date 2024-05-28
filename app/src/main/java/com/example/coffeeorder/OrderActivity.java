@@ -24,15 +24,13 @@ public class OrderActivity extends AppCompatActivity {
         double price = receivedIntent.getDoubleExtra("price", 0);
         double orderPrice = receivedIntent.getDoubleExtra("orderPrice", 0);
 
-        String text = "Name: " + userName + "\n" + "Goods Name: " + goodsName + "\n" + "Quantity: " + quantity + "\n" + "Price: " + price + "$" + "\n" +
-                "Order Price: " + orderPrice + "$";
+        String text = "Имя: " + userName + "\n" + "Название товара: " + goodsName + "\n" + "Количество: " + quantity + "\n" + "Цена: $" + price + "\n" + "Стоимость заказа: $" + orderPrice;
 
         TextView textView = findViewById(R.id.orderTextView);
         textView.setText(text);
-
     }
 
     public void orderSubmit(View view) {
-        Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Заказ оформлен!", Toast.LENGTH_SHORT).show();
     }
 }

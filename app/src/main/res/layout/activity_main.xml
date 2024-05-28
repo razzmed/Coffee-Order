@@ -4,17 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_background"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="20dp"
+        android:text="Добро пожаловать"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your name">
-
-    </EditText>
+        android:hint="Enter your name" />
 
     <ImageView
         android:layout_width="match_parent"
@@ -30,11 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginEnd="20dp"
-        android:text="Select item"
+        android:text="Выбрать"
+        android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:textAllCaps="false">
+        android:textStyle="bold">
 
     </TextView>
 
@@ -51,8 +62,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center_horizontal"
         android:scaleType="centerCrop"
-        android:src="@drawable/cappuccino">
-    </ImageView>
+        android:src="@drawable/cappuccino" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -62,12 +72,12 @@
             android:id="@+id/priceTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order price"
             android:layout_marginStart="20dp"
+            android:text="Стоимость заказа"
+            android:textAllCaps="false"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textAllCaps="false">
+            android:textSize="14sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -75,13 +85,13 @@
             android:id="@+id/priceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:layout_below="@+id/priceTitleTextView"
             android:layout_marginStart="60dp"
             android:layout_marginTop="3dp"
-            android:textColor="@android:color/black">
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -89,14 +99,14 @@
             android:id="@+id/currencyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
-            android:layout_toRightOf="@+id/priceTextView"
             android:layout_below="@+id/priceTitleTextView"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="2dp"
-            android:layout_marginStart="4dp">
+            android:layout_toRightOf="@+id/priceTextView"
+            android:text="$"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -104,44 +114,46 @@
             android:id="@+id/quantityTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quantity"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:textColor="@android:color/black"
             android:layout_marginStart="160dp"
             android:layout_toRightOf="@+id/priceTitleTextView"
-            android:textAllCaps="false">
+            android:text="Количество"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            android:textStyle="bold">
 
         </TextView>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnMinus"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="-"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/quantityTitleTextView"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="250dp"
-            android:background="#000000"
-            android:textStyle="bold"
+            android:background="@color/white"
+            android:backgroundTint="@color/grown"
+            android:onClick="decrease"
+            android:text="-"
+            android:textColor="@color/white"
             android:textSize="18sp"
-            android:onClick="decrease">
+            android:textStyle="bold"
+            app:backgroundTint="@color/grown">
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
         <TextView
             android:id="@+id/quantityTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:layout_below="@+id/priceTitleTextView"
             android:layout_marginStart="10dp"
             android:layout_marginTop="6dp"
             android:layout_toRightOf="@+id/btnMinus"
-            android:textColor="@android:color/black">
+            android:text="0"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold">
 
         </TextView>
 
@@ -149,35 +161,36 @@
             android:id="@+id/btnPlus"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:text="+"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/quantityTitleTextView"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="320dp"
-            android:background="#000000"
-            android:textStyle="bold"
-            android:textSize="18sp"
             android:layout_toRightOf="@id/quantityTextView"
-            android:onClick="increase">
+            android:background="@color/white"
+            android:backgroundTint="@color/grown"
+            android:onClick="increase"
+            android:text="+"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/grown">
 
         </Button>
 
     </RelativeLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add to Card"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/grown"
+        android:onClick="addToCard"
+        android:text="ДОБАВИТЬ НА ЗАКАЗ"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:background="#000000"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
         android:textSize="18sp"
-        android:onClick="addToCard">
+        android:textStyle="bold"
+        app:cornerRadius="32dp">
 
-    </Button>
-
-
+    </com.google.android.material.button.MaterialButton>
 
 </LinearLayout>

@@ -4,30 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_background"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".OrderActivity">
 
     <TextView
         android:id="@+id/orderTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp">
-
-    </TextView>
-
-    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000"
-        android:text="Submit"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/text_view_background"
+        android:padding="16dp"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
-        android:onClick="orderSubmit">
+        tools:text="Order details will be shown here" />
 
-    </Button>
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitOrderButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/grown"
+        android:onClick="orderSubmit"
+        android:text="ЗАКАЗАТЬ"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="32dp" />
 
 </LinearLayout>
